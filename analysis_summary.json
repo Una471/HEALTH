@@ -1,0 +1,10 @@
+{
+  "baseline_wait_min": 14.3,
+  "target_wait_min": -0.7,
+  "wait_reduction_min": 15,
+  "quarterly_waste_saved": 59100.0,
+  "annual_waste_saved": 236400.0,
+  "total_beds": 167,
+  "occupancy_pct": 74.9,
+  "wards_at_capacity": 0
+}
