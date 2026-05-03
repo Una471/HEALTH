@@ -1,5 +1,5 @@
 """
-PRINCESS MARINA HOSPITAL — OPERATIONAL DASHBOARD
+Botswana General Hospital — OPERATIONAL DASHBOARD
 Simple report for hospital management. CLEAR TEXT COLORS.
 Run: streamlit run 03_dashboard.py --server.port 8501
 """
@@ -9,7 +9,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-st.set_page_config(page_title="Princess Marina | Dashboard", page_icon="🏥", layout="wide")
+st.set_page_config(page_title="Botswana General Hospital | Dashboard", page_icon="🏥", layout="wide")
 
 st.markdown("""
 <style>
@@ -50,7 +50,7 @@ def load():
 flow, inv, beds = load()
 
 with st.sidebar:
-    st.markdown("### 🏥 Princess Marina Hospital")
+    st.markdown("### 🏥 Botswana General Hospital")
     st.markdown("Operations Dashboard")
     st.markdown("---")
     page = st.radio("Go to", [
@@ -81,7 +81,7 @@ def wchart(fig, h=340):
 # PAGE 1 — OVERVIEW
 # ════════════════════════════════════════════════════════════════
 if page == "📊  Overview":
-    st.markdown('<div class="topbar"><h1>🏥 Hospital Operations Overview</h1><p>Princess Marina Hospital &nbsp;·&nbsp; July – December 2025</p></div>', unsafe_allow_html=True)
+    st.markdown('<div class="topbar"><h1>🏥 Hospital Operations Overview</h1><p>Botswana General Hospital &nbsp;·&nbsp; July – December 2025</p></div>', unsafe_allow_html=True)
 
     total_patients = dff["patients_arrived"].sum()
     avg_wait       = dff["wait_time_min"].mean()
@@ -343,4 +343,4 @@ elif page == "📈  Department Performance":
     st.dataframe(show.reset_index(drop=True), use_container_width=True)
 
 st.markdown("---")
-st.markdown("<div style='text-align:center;color:#6c757d;font-size:.78rem'>Princess Marina Hospital · Operations Dashboard · Prepared by Data Analytics Team · 2026</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center;color:#6c757d;font-size:.78rem'>Botswana General Hospital · Operations Dashboard · Prepared by Data Analytics Team · 2026</div>", unsafe_allow_html=True)
