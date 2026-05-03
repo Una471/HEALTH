@@ -1,5 +1,5 @@
 """
-PRINCESS MARINA HOSPITAL — HOSPITAL MANAGEMENT SYSTEM
+Botswana General Hospital — HOSPITAL MANAGEMENT SYSTEM
 Daily operational tool for staff. CLEAR TEXT COLORS.
 Run: streamlit run 04_software.py --server.port 8502
 """
@@ -10,7 +10,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime, date, timedelta
 
-st.set_page_config(page_title="Princess Marina | Operations", page_icon="🏥", layout="wide")
+st.set_page_config(page_title="Botswana General Hospital | Operations", page_icon="🏥", layout="wide")
 
 st.markdown("""
 <style>
@@ -63,7 +63,7 @@ def kcard(color, val, lbl, sub=""):
 # ── SIDEBAR ───────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## 🏥 Hospital Operations")
-    st.markdown("*Princess Marina Hospital*")
+    st.markdown("*Botswana General Hospital*")
     st.markdown("---")
     nav = st.radio("Go to", [
         "🛏️  Bed Availability",
@@ -383,4 +383,4 @@ elif nav == "📋  Admission Queue":
         st.download_button("📥 Export Admission Log", csv, "admissions_today.csv", "text/csv")
 
 st.markdown("---")
-st.markdown("<div style='text-align:center;color:#6c757d;font-size:.78rem'>Princess Marina Hospital · Operations System · Unaswi Leonard · 2026</div>", unsafe_allow_html=True)
+st.markdown("<div style='text-align:center;color:#6c757d;font-size:.78rem'>Botswana General Hospital · Operations System · Unaswi Leonard · 2026</div>", unsafe_allow_html=True)
