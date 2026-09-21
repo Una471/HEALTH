@@ -217,7 +217,7 @@ elif nav == "Patient admission":
                 "Outpatient": ["General Ward A","General Ward B"]
             }
             preferred_wards = ward_mapping.get(department, ["General Ward A","General Ward B"])
-            
+
             available_ward = None
             available_choices = []
             for ward_name in preferred_wards:
@@ -241,7 +241,7 @@ elif nav == "Patient admission":
                     </div>
                 </div>
                 """, unsafe_allow_html=True)
-                
+
                 # Save admission
                 st.info(f"Confirming will place {patient_name} in {available_ward['ward_name']} with {urgency.lower()} priority.")
                 if st.button("Confirm admission", key="confirm_adm", use_container_width=True):
@@ -317,7 +317,7 @@ elif nav == "Inventory alerts":
                 </div>
             </div>
             """, unsafe_allow_html=True)
-        
+
         # Log alert action
         if st.button("Mark alerts as reviewed"):
             st.session_state.alerts_log.append({
@@ -360,7 +360,7 @@ elif nav == "Patient flow":
 
     # Simulate "today" as most recent date in data
     today_data = flow[flow["date"] == flow["date"].max()]
-    
+
     current_patients = today_data["patients_arrived"].sum()
     current_wait     = today_data["wait_time_min"].mean()
     staff_on_duty    = today_data["staff_on_duty"].sum()
@@ -378,7 +378,7 @@ elif nav == "Patient flow":
         staff=("staff_on_duty","sum")
     ).reset_index()
     dept_today = dept_today.sort_values("wait", ascending=False)
-    
+
     for _, dept in dept_today.iterrows():
         wait_val = dept["wait"]
         color = "red" if wait_val > 45 else "orange" if wait_val > 30 else "green"
